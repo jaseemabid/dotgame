@@ -15,17 +15,22 @@ module.exports = function(grunt) {
 			files: ['grunt.js', 'app.js', 'public/*.js', 'test/**/*.js']
 		},
 		concat: {
-			dist: {
-				src: ['<banner:meta.banner>', '<file_strip_banner:lib/<%= pkg.name %>.js>'],
-				dest: 'dist/<%= pkg.name %>.js'
+			css: {
+				src : [ "public/css/normalize.css",
+						"public/css/main.css",
+						"public/css/game.css"],
+				dest: "public/css/dotgame.min.css"
 			}
 		},
-		min: {
-			dist: {
-				src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-				dest: 'dist/<%= pkg.name %>.min.js'
-			}
-		},
+		// min: {
+		//	dist: {
+		//		src : [ "static/js/init.js",
+		//				"static/js/game.js",
+		//				"static/js/mygame.js",
+		//				"static/js/app.js"],
+		//		dest: 'static/js/dotgame.min.js'
+		//	}
+		// },
 		watch: {
 			files: '<config:lint.files>',
 			tasks: 'lint qunit'
@@ -51,10 +56,24 @@ module.exports = function(grunt) {
 				__dirname : true
 			}
 		},
+		less: {
+			development: {
+				options: {
+					paths: ["public/less"],
+					compress : true
+				},
+				files: {
+					"public/css/game.css": "public/less/game.less"
+				}
+			}
+		},
 		uglify: {}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-less');
+
 	// Default task.
-	grunt.registerTask('default', 'lint concat min');
+	grunt.registerTask('default', 'lint less concat'); //min
+
 
 };
