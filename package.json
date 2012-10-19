@@ -1,0 +1,22 @@
+{
+	"name": "dotdot",
+	"version": "0.0.0",
+	"description": "Simple dotgame",
+	"main": "index.js",
+	"directories": {
+		"doc": "doc"
+	},
+	"scripts": {
+		"test": "mocha"
+	},
+	"repository": "",
+	"keywords": [
+		"dotgame"
+	],
+	"dependencies": {
+		"express": "3.x"
+	},
+	"author": "Jaseem Abid",
+	"license": "BSD",
+	"readmeFilename": "README.md"
+}
