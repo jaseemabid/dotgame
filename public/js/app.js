@@ -7,5 +7,12 @@
 		root: "/"
 	});
 
+	var board = new dotgame.models.Board({
+			count : 3
+		});
+
+	_.extend(dotgame, {
+		board : board
+	});
 
 }(dotgame));
