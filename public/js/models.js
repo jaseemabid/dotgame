@@ -12,24 +12,16 @@
 			},
 			initialize: function() {
 			}
-		}),
-		Board : Backbone.Model.extend({
+		})
+	};
+	app.collections = {
+ 		Board : Backbone.Collection.extend({
+			model : app.models.Box,
 			defaults : {
-				count : 3,
-				board  : []
+				size : 3
 			},
 			initialize : function() {
-				var that = this,
-					row,
-					count = this.get('count');
 
-				_(count).times(function(){
-					row = [];
-					_(count).times(function(){
-						row.push(new dotgame.models.Box());
-					});
-					that.get('board').push(row);
-				});
 			}
 		})
 	};
