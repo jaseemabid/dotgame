@@ -3,7 +3,7 @@
   // Defining the application router, you can attach sub routers here.
   app.Router = Backbone.Router.extend({
     routes: {
-      "": "index"
+		"" : "index"
     },
 
     index: function() {
@@ -11,6 +11,6 @@
     }
   });
 
-  return Router;
+  return app.Router;
 
 }(dotgame));
