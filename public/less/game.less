@@ -1,3 +1,56 @@
+@boxGray		: rgba(216, 209, 209, 0.82);
+@lightGray		: rgba(181, 182, 190, 0.74);
+@metalBlue		: rgba(35, 35, 211, 0.64);
+
+@s0			: 15px;
+@s1			: 65px;
+
 body {
 	background-color : #efefef;
+
+	div.container {
+
+		margin-top : 50px;
+
+		div#board {
+
+			div.row {
+				margin-left : 10px;
+
+				div {
+					display : inline-block;
+					background-color: @boxGray;
+					border-radius: 3px;
+				}
+
+				div.line {
+					&:hover {
+						background-color : @metalBlue;
+					}
+				}
+
+				div.thin.short {
+						background-color : @metalBlue;
+				}
+
+				div.thin {
+					width : @s0;
+				}
+
+				div.wide {
+					width : @s1;
+				}
+
+				div.short {
+					height : @s0;
+				}
+
+				div.tall {
+					height : @s1;
+				}
+			}
+
+		}
+	}
+
 }
