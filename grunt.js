@@ -16,8 +16,7 @@ module.exports = function(grunt) {
 		},
 		concat: {
 			css: {
-				src : [ "public/css/normalize.css",
-						"public/css/main.css",
+				src : [ "public/css/main.css",
 						"public/css/game.css"],
 				dest: "public/css/dotgame.min.css"
 			}
@@ -32,8 +31,8 @@ module.exports = function(grunt) {
 		//	}
 		// },
 		watch: {
-			files: '<config:lint.files>',
-			tasks: 'lint qunit'
+			files: 'public/less/game.less',
+			tasks: 'less concat'
 		},
 		jshint: {
 			options: {
